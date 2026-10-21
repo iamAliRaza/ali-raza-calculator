@@ -14,7 +14,6 @@
 - One screen serves both Students and Instructors. There is no role switch.
 - The app supports the latest desktop versions of Chrome, Edge, Firefox and Safari. The versions tested are listed in the README.
 - The required score is a percentage of each remaining assessment's max points. It is never converted to points.
-- Out of scope: screen-reader announcements when results change. This is listed in the README as a known limitation.
 
 ## Screen elements
 
