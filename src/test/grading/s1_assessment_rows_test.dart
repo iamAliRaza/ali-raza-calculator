@@ -53,12 +53,16 @@ void main() {
         'Based on completed work: 40.00% of the course');
   });
 
-  test('S-1 criterion 9: a row with only Name shows "Enter a weight"', () {
-    final r = run([row(name: 'Final exam')]);
+  test('S-1 criterion 9: a row with only Name is not in use and shows no errors', () {
+    final alone = run([row(name: 'Final exam')]);
+    expect(fieldErrors(alone), isEmpty);
+    expect(alone.results.resultsMessage, addAssessmentsMessage);
+    expect(alone.results.weightsLine, isNull);
 
-    expect(r.assessments.single.weightError, 'Enter a weight');
-    expect(r.assessments.single.maxPointsError, isNull);
-    expect(r.assessments.single.pointsEarnedError, isNull);
+    final withOthers = run([quiz, midterm, row(name: 'Final exam')]);
+    expect(fieldErrors(withOthers), isEmpty);
+    expect(withOthers.results.weightsLine, 'Weights total: 40.00%');
+    expect(withOthers.results.gradeLine, 'Current grade 78.75% (C)');
   });
 
   test('S-1 criterion 10: a row with only Weight is a valid upcoming assessment', () {

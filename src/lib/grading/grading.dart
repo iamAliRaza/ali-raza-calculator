@@ -69,7 +69,8 @@ typedef _CheckedRow = ({
 });
 
 _CheckedRow _checkRow(AssessmentInput input) {
-  final inUse = [input.name, input.weight, input.maxPoints, input.pointsEarned]
+  // Name does not count, so typing a name alone never shows errors.
+  final inUse = [input.weight, input.maxPoints, input.pointsEarned]
       .any((text) => text.trim().isNotEmpty);
   if (!inUse) {
     return (

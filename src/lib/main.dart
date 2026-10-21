@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'ui/grade_calculator_page.dart';
+
 void main() {
   runApp(const GradeCalculatorApp());
 }
@@ -11,25 +13,13 @@ class GradeCalculatorApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Grade calculator',
-      theme: ThemeData(colorSchemeSeed: Colors.indigo),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorSchemeSeed: Colors.indigo,
+        inputDecorationTheme:
+            const InputDecorationTheme(border: OutlineInputBorder()),
+      ),
       home: const GradeCalculatorPage(),
-    );
-  }
-}
-
-/// Holds all app state. Placeholder until S-1 is implemented.
-class GradeCalculatorPage extends StatefulWidget {
-  const GradeCalculatorPage({super.key});
-
-  @override
-  State<GradeCalculatorPage> createState() => _GradeCalculatorPageState();
-}
-
-class _GradeCalculatorPageState extends State<GradeCalculatorPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Grade calculator')),
     );
   }
 }

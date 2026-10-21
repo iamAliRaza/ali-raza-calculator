@@ -52,7 +52,7 @@ The criteria refer to these elements by name.
 - **Valid numbers:** spaces and other whitespace around a value are trimmed, and a field containing only whitespace is blank. A plain decimal number is accepted, with an optional + or - sign, leading zeros, and nothing required before or after the decimal point: "007", ".5", "5." and "+5" are all valid, and "-0" is 0. Anything else shows "Enter a number", including "1e3", "0x10", "NaN", "Infinity", "85,5", "1,000", and ".", "+" or "-" on its own.
 - Decimal places are counted as typed, so "5.000" shows "Use at most 2 decimal places".
 - **Name** is plain text with no number rules. It holds at most 40 characters: typing stops at 40 and a character counter is shown, which is not an error. An emoji counts as one character.
-- A **row is in use** when any of its fields, including Name, is not blank. A row that is not in use is ignored.
+- A **row is in use** when any of its number fields (Weight, Max points, Points earned) is not blank. Name does not count, so a row with only a Name is not in use. A row that is not in use is ignored and shows no errors.
 - Every row in use needs a Weight. Max points is needed only once Points earned is filled in, so a row with only a Weight is a valid upcoming assessment.
 - A blank **Points earned** means the assessment has not been marked yet.
 
@@ -98,7 +98,7 @@ The criteria refer to these elements by name.
 - Given 20 rows, when I select Remove on any row, then Add assessment is enabled again and the row limit message disappears.
 - Given a row with valid numbers and a blank Name, then results are calculated as normal.
 - Given a row where every field is blank, then it is not in use and is ignored, and results are calculated from the other rows.
-- Given a row where only Name is filled in, then the Weight field shows "Enter a weight".
+- Given a row where only Name is filled in, then it is not in use: no field shows an error, and results are calculated from the other rows.
 - Given a row where only Weight is filled in, with 100, then no field shows an error and the results message shows "Enter points earned for at least one assessment to see your current grade."
 - Given I type 41 characters in Name, then only the first 40 are kept and a character counter is shown, with no error.
 - Given a window 375 px wide, then every field, button and the results area can be used without sideways scrolling.
