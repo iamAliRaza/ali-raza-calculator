@@ -85,9 +85,9 @@ The criteria refer to these elements by name.
 
 ---
 
-## Planned stories
+## Implemented stories
 
-### S-1 (serves J-1, Status: Planned)
+### S-1 (serves J-1, Status: Implemented)
 "As a Student, I want to list each assessment in my course with its weight, maximum points and the points I earned, leaving upcoming ones blank, so that my grade is worked out from my actual course structure."
 
 - Given I open the app, then I see one assessment row with empty Name, Weight (%), Max points and Points earned fields, the results message "Add your assessments to see your grade." and no weights line.
@@ -103,7 +103,7 @@ The criteria refer to these elements by name.
 - Given I type 41 characters in Name, then only the first 40 are kept and a character counter is shown, with no error.
 - Given a window 375 px wide, then every field, button and the results area can be used without sideways scrolling.
 
-### S-2 (serves J-1, Status: Planned)
+### S-2 (serves J-1, Status: Implemented)
 "As a Student, I want to see my current grade on the work marked so far, as a percentage and a letter, so that I know how my results add up despite their different weights."
 
 - Given example course A, then the grade line shows "Current grade 78.75% (C)" and the coverage line shows "Based on completed work: 40.00% of the course".
@@ -113,7 +113,7 @@ The criteria refer to these elements by name.
 - Given every marked assessment has 0 points earned, then the grade line shows 0.00% (F) and no error.
 - Given one assessment with weight 100, max points 10000 and points earned 10000, then the grade line shows 100.00% (A).
 
-### S-3 (serves J-1, Status: Planned)
+### S-3 (serves J-1, Status: Implemented)
 "As a Student, I want a clear message when something I typed can't be used, so that I can fix it instead of getting a wrong grade."
 
 - Given I type "abc", "1,000", "1e3", "0x10", "85,5", "NaN" or "Infinity" in Weight, Max points or Points earned, then that field shows "Enter a number" and the results message shows "Fix the highlighted fields to see your results."
@@ -134,7 +134,7 @@ The criteria refer to these elements by name.
 - Given a field shows an error, when I correct the value, then the message disappears and the results reappear without reloading the page.
 - Given the only error is in one row, when I select Remove on that row, then the error disappears and the results reappear.
 
-### S-4 (serves J-3, Status: Planned)
+### S-4 (serves J-3, Status: Implemented)
 "As an Instructor, I want to see the total of the weights and be warned when it isn't exactly 100%, so that a typing mistake in the course breakdown can't produce a wrong grade."
 
 - Given weights 10, 30 and 60, then the weights line shows "Weights total: 100.00%" and no weights warning is shown.
@@ -145,7 +145,7 @@ The criteria refer to these elements by name.
 - Given one row with only Weight 10 filled in, then the weights line shows "Weights total: 10.00%" and the weights warning is shown.
 - Given the weights warning is shown, when I correct a weight so the total is 100, then the warning disappears and the results update.
 
-### S-5 (serves J-2, Status: Planned)
+### S-5 (serves J-2, Status: Implemented)
 "As a Student, I want to set a target grade and see the percentage I need on each remaining assessment, so that I can plan my study effort or change my goal."
 
 - Given I type 85 in Target grade, then the target letter shows "(B)".
@@ -167,7 +167,7 @@ The criteria refer to these elements by name.
 - Given a required score is shown, when I change the target or any mark, then the required score updates on the same keystroke.
 - Given no row is in use, when I type 85 in Target grade, then the target letter shows "(B)", the results message shows "Add your assessments to see your grade." and no required score is shown.
 
-### S-6 (serves J-3, Status: Planned)
+### S-6 (serves J-3, Status: Implemented)
 "As an Instructor, I want the result labelled Final grade only when every assessment is marked and the weights total 100%, so that I never record a partial grade as final."
 
 - Given example course A with Final exam points earned 88, then the grade line shows "Final grade 84.30% (B)" and no coverage line is shown.
@@ -192,7 +192,7 @@ The criteria refer to these elements by name.
   | 10000 | 8999.4 | Final grade 89.99% (B) |
   | 10000 | 8999.5 | Final grade 90.00% (A) |
 
-### S-7 (serves J-4, Status: Planned)
+### S-7 (serves J-4, Status: Implemented)
 "As an Instructor, I want to change any mark and see the result update immediately, so that I can check the effect of a regrade while talking to the student."
 
 - Given example course A with Final exam points earned 88 showing "Final grade 84.30% (B)", when I change Final exam points earned to 97.5, then the grade line shows "Final grade 90.00% (A)" on the same keystroke, without pressing any button.
