@@ -130,4 +130,13 @@ void main() {
     expect(requiredScore(remarked, '80'),
         'You need at least 75.84% on each remaining assessment to reach 80.00% (B).');
   });
+
+  test('S-5 criterion 18: a target with no row in use shows its letter but no required score', () {
+    final r = run([blankRow], target: '85');
+
+    expect(r.targetLetter, '(B)');
+    expect(r.results.resultsMessage, addAssessmentsMessage);
+    expect(r.results.weightsLine, isNull);
+    expect(r.results.requiredScoreLine, isNull);
+  });
 }

@@ -68,7 +68,7 @@ The criteria refer to these elements by name.
 2. Otherwise, once any row is in use, the weights line is shown, followed by the weights warning if the weights do not total exactly 100. The warning is not an error.
 3. Then the grade line, or a results message if there is no grade. The coverage line follows only when a grade is shown, the weights total 100 and at least one row in use is unmarked.
 4. Then the required score line:
-   - Target grade blank: nothing is shown.
+   - Target grade blank, or no row in use: nothing is shown.
    - Weights not totalling 100 and Target grade filled in, valid or not: "Required score is shown once weights total 100%." This wins over "No remaining assessments, so no required score."
    - A Target grade error hides only the required score and the target letter. The grade line stays.
 
@@ -165,6 +165,7 @@ The criteria refer to these elements by name.
 - Given weights totalling 95, when I type "abc" in Target grade, then the field shows "Target must be a number from 0 to 100" and the required score line shows "Required score is shown once weights total 100%."
 - Given Target grade is blank, then no required score, no target letter and no error are shown.
 - Given a required score is shown, when I change the target or any mark, then the required score updates on the same keystroke.
+- Given no row is in use, when I type 85 in Target grade, then the target letter shows "(B)", the results message shows "Add your assessments to see your grade." and no required score is shown.
 
 ### S-6 (serves J-3, Status: Planned)
 "As an Instructor, I want the result labelled Final grade only when every assessment is marked and the weights total 100%, so that I never record a partial grade as final."
