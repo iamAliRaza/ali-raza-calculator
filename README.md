@@ -2,7 +2,9 @@
 
 See where you stand in a weighted course, and what you need on the rest.
 
-**Live app:** _not deployed yet, link added after deploy_
+**Live app:** <https://iamaliraza.github.io/ali-raza-calculator/>
+
+Every push to `main` runs `flutter analyze` and `flutter test`, then deploys to GitHub Pages only if both pass ([workflow](.github/workflows/deploy.yml)).
 
 ## What it is, who it's for, and why
 
