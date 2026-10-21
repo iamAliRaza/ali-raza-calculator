@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+*.iml
+
+# Flutter build output (src/.gitignore covers the rest of the generated files)
+src/build/
+src/.dart_tool/
